@@ -24,9 +24,29 @@ public class Main {
     // create an array
     double[] heights = new double[heightNumber];
 
-    //put heights into array using loop
+    // create a variable to store the sum
+    double sum = 0;
+
+    //put heights into array using loop and calculate sum
     for(int i = 0; i < heightNumber; i++){
-      int heightInput = input.nextInt();
+      heights[i] = input.nextInt();
+      // add the heights to sum
+      sum = sum + heights[i];
+    }
+
+    // determine the average
+    double average = sum / heightNumber;
+    // let the user know
+    System.out.println("The average height is " + average + "cm");
+
+    // tell the user the heights above average
+    System.out.println("The heights above average are");
+
+    // use for loop to go through index to see greater than average
+    for( int i = 0; i < heightNumber; i++){
+     if(heights[i] > average){
+       System.out.println(heights[i]);
+      }
     }
     
   }
